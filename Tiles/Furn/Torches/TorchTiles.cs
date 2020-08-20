@@ -10,11 +10,11 @@ using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.GameContent.UI.States;
 using IL.Terraria.IO;
-using DecoTiles.Tiles.Furniture;
+using DecoTiles.Tiles.Furn;
 
 namespace DecoTiles.Tiles.Furn.Torches
 {
-	public class AlysianTorchTile : ModTile
+	/*public class AlysianTorchTile : ModTile
     {
 		public override void SetDefaults()
 		{ FurnitureHelper.QuickTorchTile(this, false, ItemType<Items.Furn.Torches.AlysianTorch>(), 153, 92, 149, 0.0037f); }
@@ -52,8 +52,8 @@ namespace DecoTiles.Tiles.Furn.Torches
 			Tile tile = Main.tile[i, j];
 			if (tile.frameX < 66)
 			{
-				Lighting.AddLight(new Vector2(i * 16, j * 16), new Vector3(153, 92, 149) * 0.0037f);
+				Lighting.AddLight(new Vector2(i * 16, j * 16), new Vector3(153, 92, 149) * 0.009f);
 			}
 		}
-	}
+	}*/
 }

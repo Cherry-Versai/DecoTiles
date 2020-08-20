@@ -202,8 +202,8 @@ namespace DecoTiles.Tiles.Furn.Misc
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.newTile.Origin = new Point16(1, 9);
-            TileObjectData.addTile(Type);
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
+            TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Portal Broken");
             AddMapEntry(new Color(40, 39, 47), name);

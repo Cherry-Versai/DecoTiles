@@ -16,13 +16,13 @@ namespace DecoTiles.Tiles.DecorBlock
 {
 	//Platform Tiles --------------------------------------------------------------------------------------
 	internal class LabPlatformTile : ModTile
-	{ public override void SetDefaults() { QuickBlock.QuickSetPlatform(this, 0, 191, SoundID.Tink, false, ItemType<Items.DecorBlockItem.LabPlatform>(), ""); } }
+	{ public override void SetDefaults() { QuickBlock.QuickSetPlatform(this, 0, 191, SoundID.Dig, false, ItemType<Items.DecorBlockItem.LabPlatform>(), ""); } }
 	internal class ThickWoodPlatformTile : ModTile
 	{ public override void SetDefaults() { QuickBlock.QuickSetPlatform(this, 0, 7, SoundID.Dig, false, ItemType<Items.DecorBlockItem.ThickWoodPlatform>(), ""); } }
 	internal class AlysianPlatingPlatformTile : ModTile
 	{ public override void SetDefaults() { QuickBlock.QuickSetPlatform(this, 0, 261, SoundID.Tink, false, ItemType<Items.DecorBlockItem.AlysianPlatingPlatform>(), ""); } }
 	internal class GrassPlatformTile : ModTile
-	{ public override void SetDefaults() { QuickBlock.QuickSetPlatform(this, 0, 3, SoundID.Tink, false, ItemType<Items.DecorBlockItem.GrassPlatform>(), ""); } }
+	{ public override void SetDefaults() { QuickBlock.QuickSetPlatform(this, 0, 3, SoundID.Dig, false, ItemType<Items.DecorBlockItem.GrassPlatform>(), ""); } }
 	internal class BlackBrickPlatformTile : ModTile
 	{ public override void SetDefaults() { QuickBlock.QuickSetPlatform(this, 0, 191, SoundID.Tink, false, ItemType<Items.DecorBlockItem.BlackBrickPlatform>(), ""); } }
 	//Platform Tiles --------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ namespace DecoTiles.Tiles.DecorBlock
 	{
 		public override void SetDefaults()
 		{
-			QuickBlock.QuickSet(this, 0, 13, SoundID.Tink, new Color(230, 222, 10), ItemType<Items.DecorBlockItem.PlasticGrass>(), true, false, false, "");
+			QuickBlock.QuickSet(this, 0, 13, SoundID.Tink, new Color(141, 89, 39), ItemType<Items.DecorBlockItem.PlasticGrass>(), true, false, false, "");
 		}
 	}
 	internal class CoalstoneTile : ModTile
@@ -110,24 +110,20 @@ namespace DecoTiles.Tiles.DecorBlock
 			soundType = SoundID.Tink;
 			AddMapEntry(new Color(37, 32, 41));
 		}
-
 		public override void NumDust(int i, int j, bool fail, ref int num)
 		{
 			num = fail ? 1 : 3;
 		}
-
 	}
 	internal class AuroraBrickTile : ModTile
 	{
 		public override void SetDefaults()
-		{
-			QuickBlock.QuickSet(this, 0, 76, SoundID.Tink, new Color(37, 32, 41), ItemType<Items.DecorBlockItem.AuroraBrick>(), true, false, false, "");
-		}
+		{ QuickBlock.QuickSet(this, 0, 76, SoundID.Tink, new Color(109, 106, 165), ItemType<Items.DecorBlockItem.AuroraBrick>(), true, false, false, ""); }
 	}
 	internal class CrackedDirtTile : ModTile
 	{
 		public override void SetDefaults()
-		{ QuickBlock.QuickSet(this, 0, 76, SoundID.Tink, new Color(37, 32, 41), ItemType<Items.DecorBlockItem.CrackedDirt>(), true, false, false, ""); }
+		{ QuickBlock.QuickSet(this, 0, 76, SoundID.Tink, new Color(153, 124, 95), ItemType<Items.DecorBlockItem.CrackedDirt>(), true, false, false, ""); }
 	}
 	internal class LivingBloodTile : ModTile
 	{

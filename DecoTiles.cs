@@ -1,22 +1,38 @@
-using static Terraria.ModLoader.ModContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using DecoTiles.Items;
+using DecoTiles.Tiles;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.Enums;
-using Terraria.ID;
+using Terraria.Graphics;
+using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
-using Terraria.ObjectData;
-using Terraria.GameContent.UI.States;
-using IL.Terraria.IO;
-using DecoTiles.Items.DecorBlockItem;
+using Terraria.UI;
+using Terraria.Graphics.Effects;
+using static Terraria.ModLoader.ModContent;
+using DecoTiles.Tiles.Furn;
+using static DecoTiles.Tiles.Furn.FurnitureHelper;
 
 namespace DecoTiles
 {
 	public class DecoTiles : Mod
-	{
+    {
+        public static DecoTiles Instance { get; set; }
 
+        public DecoTiles() { Instance = this; }
+        public static void AutoloadFurniture()
+        {
+            if (Instance.Code != null)
+            {
+                foreach (Type type in Instance.Code.GetTypes().Where(t => t.IsSubclassOf(typeof(AutoFurniture))))
+                {
+                    (Activator.CreateInstance(type) as AutoFurniture).Load(Instance);
+                }
+            }
+        }
 
     }
 }

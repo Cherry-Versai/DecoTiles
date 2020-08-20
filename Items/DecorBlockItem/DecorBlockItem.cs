@@ -98,8 +98,40 @@ namespace DecoTiles.Items.DecorBlockItem
 	public class CrackedDirt : QuickTileItem { public CrackedDirt() : base("Cracked Dirt", "Grass can't grow on it", TileType<Tiles.DecorBlock.CrackedDirtTile>(), 0) {  } public override void AddRecipes() { ModRecipe recipe = new ModRecipe(mod); recipe.AddIngredient(ItemID.SandBlock, 1); recipe.AddIngredient(ItemID.DirtBlock, 1); recipe.SetResult(this, 2); recipe.AddRecipe(); } }
 	public class AuroraBrick : QuickTileItem { public AuroraBrick() : base("Aurora Brick", "", TileType<Tiles.DecorBlock.AuroraBrickTile>(), 0) { } }
 	public class LivingBlood : QuickTileItem { public LivingBlood() : base("Living Blood", "", TileType<Tiles.DecorBlock.LivingBloodTile>(), 0) { } }
-	public class InfinityBlock : QuickTileItem { public InfinityBlock() : base("Infinite Block", "", TileType<Tiles.DecorBlock.InfinityBlockTile>(), 0) { } 
-		public override void SetDefaults() { item.consumable = false; item.createTile = mod.TileType("InfinityBlockTile"); } }
+	public class InfinityBlock : ModItem
+    {
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Infinite Block");
+			Tooltip.SetDefault("It has no end");
+		}
+
+		public override void SetDefaults()
+		{
+			item.width = 16;
+			item.height = 16;
+			item.maxStack = 1;
+			item.useTurn = true;
+			item.autoReuse = true;
+			item.useAnimation = 10;
+			item.useTime = 10;
+			item.useStyle = ItemUseStyleID.SwingThrow;
+			item.consumable = false;
+			item.createTile = TileType<Tiles.DecorBlock.InfinityBlockTile>();
+			item.rare = 0;
+		}
+		public override void ModifyTooltips(List<TooltipLine> tooltips)
+		{
+			foreach (TooltipLine line2 in tooltips)
+			{
+				if (line2.mod == "Terraria" && line2.Name == "ItemName")
+				{
+					line2.overrideColor = new Color(134, 182, 189);
+				}
+			}
+		}
+	}
+	public class CardboardBox : QuickTileItem { public CardboardBox() : base("Cardboard Box", "", TileType<Tiles.DecorBlock.LivingBloodTile>(), 0) { } }
 	public class ChessboardBlock : QuickTileItem
 	{
 		public ChessboardBlock() : base("Chessboard Block", "", TileType<Tiles.DecorBlock.ChessboardBlockTile>(), 0) { }
