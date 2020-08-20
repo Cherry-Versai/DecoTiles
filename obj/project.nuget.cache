@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "nPVQoWiUNWI2gBMZBkpi4I+RGhwCeqzkOG3cdHqIOQzBMTalaLpy3ZyK9oVWN3qBYNUwkI8KbKhKflvQGSaJXA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cradn\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cradn\\.nuget\\packages\\tmodloader.codeassist\\0.1.1\\tmodloader.codeassist.0.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

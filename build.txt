@@ -1,0 +1,3 @@
+displayName = Cherry's Various Tiles
+author = Cherry
+version = 0.1
