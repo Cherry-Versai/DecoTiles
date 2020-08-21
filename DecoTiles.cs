@@ -21,7 +21,6 @@ namespace DecoTiles
 	public class DecoTiles : Mod
     {
         public static DecoTiles Instance { get; set; }
-
         public DecoTiles() { Instance = this; }
         public static void AutoloadFurniture()
         {
@@ -33,6 +32,9 @@ namespace DecoTiles
                 }
             }
         }
-
+        public override void Load()
+        {
+            AutoloadFurniture();
+        }
     }
 }

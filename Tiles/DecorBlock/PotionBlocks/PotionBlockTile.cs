@@ -217,12 +217,10 @@ namespace DecoTiles.Tiles.DecorBlock.PotionBlocks
 		{ QuickBlock.QuickSet(this, 0, 13, SoundID.Shatter, new Color(200, 246, 254), ItemType<Items.DecorBlockItem.PotionBlockItems.RecallPotionGlass>(), true, false, false, ""); }
 		public override void FloorVisuals(Player player)
 		{
-			player.AddBuff(BuffID.Ironskin, 1);
-			player.moveSpeed -= 0.2f;
 			if (player.SpawnX == -1 && player.SpawnY == -1)
-			{ player.Teleport(new Vector2(Main.spawnTileX, Main.spawnTileY + 2) * 16); }
+			{ player.Teleport(new Vector2(Main.spawnTileX, Main.spawnTileY - 2) * 16); }
 			else
-			{ player.Teleport(new Vector2(player.SpawnX, player.SpawnY + 2) * 16); }
+			{ player.Teleport(new Vector2(player.SpawnX, player.SpawnY - 2) * 16); }
 		}
 	}
 	internal class RegenerationPotionGlassTile : ModTile
