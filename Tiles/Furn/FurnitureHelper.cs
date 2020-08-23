@@ -9,7 +9,7 @@ using Terraria.Enums;
 
 namespace DecoTiles.Tiles.Furn
 {
-    internal static class FurnitureHelper
+    internal static class FurnitureHelper //All of this code was provided by Scalie, he's fucking amazing bro
     {
         public class AutoFurniture
         {
