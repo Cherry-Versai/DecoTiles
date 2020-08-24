@@ -12,6 +12,8 @@ using Terraria.GameContent.UI.States;
 using IL.Terraria.IO;
 using DecoTiles.Items.DecorBlockItem;
 using DecoTiles.Items.DecorBlockItem.Walls;
+using System.Collections.Specialized;
+using System.Drawing;
 
 namespace DecoTiles
 {
@@ -21,10 +23,27 @@ namespace DecoTiles
         {
 			if (Main.tile[(int)(player.Center.X / 16), ((int)(player.Center.Y / 16) - 2)].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile"))
             {
-				player.AddBuff(BuffID.Gravitation, 20);
+				player.gravity = -1;
+			}
+			if (Main.tile[(int)(player.Center.X / 16), ((int)(player.Center.Y / 16) + 2)].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile")
+			|| Main.tile[(int)(player.Center.X / 16), ((int)(player.Center.Y / 16) - 2)].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile")
+)
+			{
+				player.velocity = new Vector2(0);
+			}
+			if (Main.tile[((int)(player.Center.X / 16) + 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile")
+			|| Main.tile[((int)(player.Center.X / 16) - 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile"))
+            {
+				{
+					player.velocity = new Vector2(-1);
+				}
 			}
 
 		}
+        public override void ModifyScreenPosition()
+        {
+			
+        }
 
-	}
+    }
 }

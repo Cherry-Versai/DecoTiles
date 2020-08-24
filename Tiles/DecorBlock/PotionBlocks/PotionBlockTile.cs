@@ -11,6 +11,8 @@ using Terraria.ObjectData;
 using Terraria.GameContent.UI.States;
 using IL.Terraria.IO;
 using DecoTiles.Items.DecorBlockItem;
+using System;
+using System.Security.Cryptography;
 
 namespace DecoTiles.Tiles.DecorBlock.PotionBlocks
 {
@@ -99,7 +101,30 @@ namespace DecoTiles.Tiles.DecorBlock.PotionBlocks
 		}
 		public override void FloorVisuals(Player player)
 		{
+			if (player.skinVariant == (PlayerVariantID.FemaleCoat))
+			{ player.skinVariant = (PlayerVariantID.MaleCoat); }
+			else if (player.skinVariant == PlayerVariantID.MaleCoat)
+			{ player.skinVariant = (PlayerVariantID.FemaleCoat); }
 
+			if (player.skinVariant == (PlayerVariantID.FemaleDress))
+			{ player.skinVariant = (PlayerVariantID.MaleDress); }
+			else if (player.skinVariant == PlayerVariantID.MaleDress)
+			{ player.skinVariant = (PlayerVariantID.FemaleDress); }
+
+			if (player.skinVariant == (PlayerVariantID.FemaleGangster))
+			{ player.skinVariant = (PlayerVariantID.MaleGangster); }
+			else if (player.skinVariant == PlayerVariantID.MaleGangster)
+			{ player.skinVariant = (PlayerVariantID.FemaleGangster); }
+
+			if (player.skinVariant == (PlayerVariantID.FemaleStarter))
+			{ player.skinVariant = (PlayerVariantID.MaleStarter); }
+			else if (player.skinVariant == PlayerVariantID.MaleStarter)
+			{ player.skinVariant = (PlayerVariantID.FemaleStarter); }
+
+			if (player.skinVariant == (PlayerVariantID.FemaleSticker))
+			{ player.skinVariant = (PlayerVariantID.MaleSticker); }
+			else if (player.skinVariant == PlayerVariantID.MaleSticker)
+			{ player.skinVariant = (PlayerVariantID.FemaleSticker); }
 		}
 	}
 	internal class GillsPotionGlassTile : ModTile
