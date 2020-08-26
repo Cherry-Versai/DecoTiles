@@ -21,7 +21,7 @@ namespace DecoTiles.Tiles.Furn
             private readonly int dust = DustID.Dirt;
             private readonly int material = ItemID.DirtBlock;
 
-            public AutoFurniture(string name, string path, Color color, Color glowColor, int dust, int material = ItemID.None)
+            protected AutoFurniture(string name, string path, Color color, Color glowColor, int dust, int material = ItemID.None)
             {
                 this.name = name;
                 this.path = path;
@@ -49,6 +49,11 @@ namespace DecoTiles.Tiles.Furn
                 Add("Sofa", new Generic3x2(color, dust, name + "Sofa"), mod, 5);
                 Add("Table", new GenericTable(color, dust, name + "Table"), mod, 8);
                 Add("Workbench", new GenericWorkbench(color, dust, name + "Workbench"), mod, 10);
+
+                //special stuff for the door
+                mod.AddTile(name + "DoorClosed", new GenericDoorClosed(color, dust, name + "DoorClosed"), path + name + "DoorClosed");
+                mod.AddTile(name + "DoorOpen", new GenericDoorOpen(color, dust, name + "DoorOpen"), path + name + "DoorOpen");
+                mod.AddItem(name + "Door", new GenericFurnitureItem(name + " " + "DoorClosed", path + name + "DoorItem", 6, material));
             }
 
             private void Add(string typename, ModTile tile, Mod mod, int craftingQuantity)
@@ -65,7 +70,7 @@ namespace DecoTiles.Tiles.Furn
             private readonly int craftingMaterial;
             private readonly string texture;
 
-            public GenericFurnitureItem(string name, string texture, int craftingQuantity, int craftingMaterial) : base(name, "", DecoTiles.Instance.TileType(name.Replace(" ", "")), 0)
+            public GenericFurnitureItem(string name, string texture, int craftingQuantity, int craftingMaterial) : base(name.Replace("Closed", ""), "", StarlightRiver.Instance.TileType(name.Replace(" ", "")), 0)
             {
                 this.name = name;
                 this.craftingQuantity = craftingQuantity;
@@ -194,6 +199,7 @@ namespace DecoTiles.Tiles.Furn
             public override void SetDefaults()
             {
                 TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, 3, 0);
+                TileObjectData.newTile.Origin = new Point16(0, 4);
                 QuickBlock.QuickSetFurniture(this, 3, 4, dust, SoundID.Dig, false, color);
             }
         }
@@ -231,7 +237,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 36) (r, g, b) = (color.R / 255, color.G / 255, color.B / 255);
+                if (tile.frameX >= 36) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
             }
         }
 
@@ -257,7 +263,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 18) (r, g, b) = (color.R / 255, color.G / 255, color.B / 255);
+                if (tile.frameX >= 18) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
             }
         }
 
@@ -312,7 +318,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 54) (r, g, b) = (color.R / 255, color.G / 255, color.B / 255);
+                if (tile.frameX >= 54) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
             }
         }
 
@@ -324,7 +330,8 @@ namespace DecoTiles.Tiles.Furn
             public override void SetDefaults()
             {
                 TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, 2, 0);
-                QuickBlock.QuickSetFurniture(this, 2, 4, dust, SoundID.Dig, false, color);
+                TileObjectData.newTile.Origin = new Point16(0, 5);
+                QuickBlock.QuickSetFurniture(this, 2, 5, dust, SoundID.Dig, false, color);
             }
         }
 
@@ -484,7 +491,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 18 && tile.frameY == 0) (r, g, b) = (color.R / 255, color.G / 255, color.B / 255);
+                if (tile.frameX >= 18 && tile.frameY == 0) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
             }
         }
 
@@ -517,7 +524,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 18 && tile.frameY == 18) (r, g, b) = (color.R / 255, color.G / 255, color.B / 255);
+                if (tile.frameX >= 18 && tile.frameY == 18) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
             }
         }
 
@@ -561,4 +568,3 @@ namespace DecoTiles.Tiles.Furn
             }
         }
     }
-}
