@@ -70,7 +70,7 @@ namespace DecoTiles.Tiles.Furn
             private readonly int craftingMaterial;
             private readonly string texture;
 
-            public GenericFurnitureItem(string name, string texture, int craftingQuantity, int craftingMaterial) : base(name.Replace("Closed", ""), "", StarlightRiver.Instance.TileType(name.Replace(" ", "")), 0)
+            public GenericFurnitureItem(string name, string texture, int craftingQuantity, int craftingMaterial) : base(name.Replace("Closed", ""), "", DecoTiles.Instance.TileType(name.Replace(" ", "")), 0)
             {
                 this.name = name;
                 this.craftingQuantity = craftingQuantity;
@@ -568,3 +568,4 @@ namespace DecoTiles.Tiles.Furn
             }
         }
     }
+}

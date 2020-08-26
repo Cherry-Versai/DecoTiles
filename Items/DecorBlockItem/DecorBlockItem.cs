@@ -98,6 +98,7 @@ namespace DecoTiles.Items.DecorBlockItem
 	public class CrackedDirt : QuickTileItem { public CrackedDirt() : base("Cracked Dirt", "Grass can't grow on it", TileType<Tiles.DecorBlock.CrackedDirtTile>(), 0) {  } public override void AddRecipes() { ModRecipe recipe = new ModRecipe(mod); recipe.AddIngredient(ItemID.SandBlock, 1); recipe.AddIngredient(ItemID.DirtBlock, 1); recipe.SetResult(this, 2); recipe.AddRecipe(); } }
 	public class AuroraBrick : QuickTileItem { public AuroraBrick() : base("Aurora Brick", "", TileType<Tiles.DecorBlock.AuroraBrickTile>(), 0) { } }
 	public class LivingBlood : QuickTileItem { public LivingBlood() : base("Living Blood", "", TileType<Tiles.DecorBlock.LivingBloodTile>(), 0) { } }
+	public class MagnetBlock : QuickTileItem { public MagnetBlock() : base("Magnet Block", "", TileType<Tiles.DecorBlock.MagnetBlockTile>(), 0) { } }
 	public class InfinityBlock : ModItem
     {
 		public override void SetStaticDefaults()
