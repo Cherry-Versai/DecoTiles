@@ -99,6 +99,7 @@ namespace DecoTiles.Items.DecorBlockItem
 	public class AuroraBrick : QuickTileItem { public AuroraBrick() : base("Aurora Brick", "", TileType<Tiles.DecorBlock.AuroraBrickTile>(), 0) { } }
 	public class LivingBlood : QuickTileItem { public LivingBlood() : base("Living Blood", "", TileType<Tiles.DecorBlock.LivingBloodTile>(), 0) { } }
 	public class MagnetBlock : QuickTileItem { public MagnetBlock() : base("Magnet Block", "", TileType<Tiles.DecorBlock.MagnetBlockTile>(), 0) { } }
+	public class EldritchGrass : QuickTileItem { public EldritchGrass() : base("Eldritch Grass Block", "", TileType<Tiles.DecorBlock.EldritchGrassTile>(), 0) { } }
 	public class InfinityBlock : ModItem
     {
 		public override void SetStaticDefaults()
