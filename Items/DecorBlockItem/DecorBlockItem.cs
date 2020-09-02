@@ -69,7 +69,7 @@ namespace DecoTiles.Items.DecorBlockItem
 	public class WeatherBrick : QuickTileItem { public WeatherBrick() : base("Weathered Bricks", "", TileType<Tiles.DecorBlock.WeatherBrickTile>(), 0) { } }
 	public class ChiselVoidCrystalBlock : QuickTileItem { public ChiselVoidCrystalBlock() : base("Chiseled Void Crystal Block", "", TileType<Tiles.DecorBlock.ChiselVoidCrystalBlockTile>(), 0) { } }
 	public class VoidCrystalBlock : QuickTileItem { public VoidCrystalBlock() : base("Void Crystal Block", "", TileType<Tiles.DecorBlock.VoidCrystalBlockTile>(), 0) { } }
-	public class OfficeFloor : QuickTileItem { public OfficeFloor() : base("Void Crystal Block", "", TileType<Tiles.DecorBlock.OfficeFloorTile>(), 0) { } }
+	public class OfficeFloor : QuickTileItem { public OfficeFloor() : base("Offile Floor", "", TileType<Tiles.DecorBlock.OfficeFloorTile>(), 0) { } }
 	//Lab Tiles ^
 
 	//Plastic Tiles v
