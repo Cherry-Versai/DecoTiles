@@ -15,6 +15,8 @@ using Terraria.Graphics.Effects;
 using static Terraria.ModLoader.ModContent;
 using DecoTiles.Tiles.Furn;
 using static DecoTiles.Tiles.Furn.FurnitureHelper;
+using Terraria.Localization;
+using Terraria.ID;
 
 namespace DecoTiles
 {
@@ -35,6 +37,19 @@ namespace DecoTiles
         public override void Load()
         {
             AutoloadFurniture();
+        }
+
+        public override void AddRecipeGroups()
+        {           
+            RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Celestial Pickaxe", new int[]
+            {
+                ItemID.VortexPickaxe,
+                ItemID.NebulaPickaxe,
+                ItemID.StardustPickaxe,
+                ItemID.SolarFlarePickaxe
+
+            }); ; ; ;
+            RecipeGroup.RegisterGroup("DecoTiles:CelestialPicks", group);
         }
     }
 }

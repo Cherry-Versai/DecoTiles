@@ -48,4 +48,22 @@ namespace DecoTiles.Items
             item.rare = 13;
         }
     }
+    public class LesbianGun : ModItem
+    {
+        public override void SetDefaults()
+        {
+            item.width = 16;
+            item.height = 16;
+            item.maxStack = 1;
+            item.useTurn = true;
+            item.autoReuse = true;
+            item.useAnimation = 10;
+            item.useTime = 10;
+            item.useStyle = ItemUseStyleID.HoldingOut;
+            item.consumable = false;
+            item.shoot = ProjectileType<Projectiles.LesbianBullet>();
+            item.shootSpeed = 12;
+            item.rare = 13;
+        }
+    }
 }

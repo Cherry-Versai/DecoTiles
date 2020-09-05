@@ -86,16 +86,7 @@ namespace DecoTiles.Items  //Huge thanks to Scalie for letting me use this (Slig
 
             SafeSetDefaults();
         }
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            foreach (TooltipLine line2 in tooltips)
-            {
-                if (line2.mod == "Terraria" && line2.Name == "ItemName")
-                {
-                    line2.overrideColor = new Color(134, 182, 189);
-                }
-            }
-        }
+
     }
 
     public abstract class QuickWallItem : ModItem
