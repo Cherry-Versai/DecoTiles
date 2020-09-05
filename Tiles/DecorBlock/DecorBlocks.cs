@@ -99,13 +99,13 @@ namespace DecoTiles.Tiles.DecorBlock
 			QuickBlock.QuickSet(this, 0, 13, SoundID.Tink, new Color(255, 255, 255), ItemType<Items.DecorBlockItem.ChessboardBlock>(), true, false, false, "");
 		}
 	}
-	internal class PlasticGrassTile : ModTile
+	internal class EldritchGrassTile : ModTile
 	{
 		public override void SetDefaults()
-		{
-			QuickBlock.QuickSet(this, 0, 13, SoundID.Tink, new Color(141, 89, 39), ItemType<Items.DecorBlockItem.PlasticGrass>(), true, false, false, "");
-		}
+		{ QuickBlock.QuickSet(this, 0, 261, SoundID.Dig, new Color(47, 40, 63), ItemType<Items.DecorBlockItem.EldritchGrass>(), false, false, true, ""); }
 	}
+	internal class PlasticGrassTile : ModTile
+	{public override void SetDefaults() { QuickBlock.QuickSet(this, 0, 13, SoundID.Tink, new Color(141, 89, 39), ItemType<Items.DecorBlockItem.PlasticGrass>(), true, false, false, ""); } }
 	internal class CoalstoneTile : ModTile
 	{
 		public override void SetDefaults()

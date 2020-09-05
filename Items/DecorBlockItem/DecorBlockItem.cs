@@ -69,7 +69,7 @@ namespace DecoTiles.Items.DecorBlockItem
 	public class WeatherBrick : QuickTileItem { public WeatherBrick() : base("Weathered Bricks", "", TileType<Tiles.DecorBlock.WeatherBrickTile>(), 0) { } }
 	public class ChiselVoidCrystalBlock : QuickTileItem { public ChiselVoidCrystalBlock() : base("Chiseled Void Crystal Block", "", TileType<Tiles.DecorBlock.ChiselVoidCrystalBlockTile>(), 0) { } }
 	public class VoidCrystalBlock : QuickTileItem { public VoidCrystalBlock() : base("Void Crystal Block", "", TileType<Tiles.DecorBlock.VoidCrystalBlockTile>(), 0) { } }
-	public class OfficeFloor : QuickTileItem { public OfficeFloor() : base("Void Crystal Block", "", TileType<Tiles.DecorBlock.OfficeFloorTile>(), 0) { } }
+	public class OfficeFloor : QuickTileItem { public OfficeFloor() : base("Offile Floor", "", TileType<Tiles.DecorBlock.OfficeFloorTile>(), 0) { } }
 	//Lab Tiles ^
 
 	//Plastic Tiles v
@@ -101,6 +101,7 @@ namespace DecoTiles.Items.DecorBlockItem
 	public class PenumbraPlate : QuickTileItem { public PenumbraPlate() : base("Penumbra Plating", "", TileType<Tiles.DecorBlock.PenumbraPlateTile>(), 0){ } }
 	public class LivingBlood : QuickTileItem { public LivingBlood() : base("Living Blood", "", TileType<Tiles.DecorBlock.LivingBloodTile>(), 0) { } }
 	public class MagnetBlock : QuickTileItem { public MagnetBlock() : base("Magnet Block", "", TileType<Tiles.DecorBlock.MagnetBlockTile>(), 0) { } }
+	public class EldritchGrass : QuickTileItem { public EldritchGrass() : base("Eldritch Grass Block", "", TileType<Tiles.DecorBlock.EldritchGrassTile>(), 0) { } }
 	public class InfinityBlock : ModItem
     {
 		public override void SetStaticDefaults()
