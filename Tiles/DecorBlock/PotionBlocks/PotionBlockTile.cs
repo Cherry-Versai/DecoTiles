@@ -246,6 +246,7 @@ namespace DecoTiles.Tiles.DecorBlock.PotionBlocks
 			{ player.Teleport(new Vector2(Main.spawnTileX, Main.spawnTileY - 2) * 16); }
 			else
 			{ player.Teleport(new Vector2(player.SpawnX, player.SpawnY - 2) * 16); }
+			
 		}
 	}
 	internal class RegenerationPotionGlassTile : ModTile
