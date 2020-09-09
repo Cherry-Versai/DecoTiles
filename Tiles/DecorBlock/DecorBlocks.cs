@@ -76,19 +76,7 @@ namespace DecoTiles.Tiles.DecorBlock
 	{ public override void SetDefaults() { QuickBlock.QuickSet(this, 0, 191, SoundID.Tink, new Color(90, 42, 42), ItemType<Items.DecorBlockItem.FertileDirt>(), true, false, false, ""); } }
 	internal class PenumbraPlateTile : ModTile
 	{ public override void SetDefaults() { QuickBlock.QuickSet(this, 0, 191, SoundID.Tink, new Color(90, 42, 42), ItemType<Items.DecorBlockItem.PenumbraPlate>(), false, false, false, ""); }
-        public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref Color drawColor, ref int nextSpecialDrawIndex)
-        {
-			if (Main.rand.NextFloat() < 0.1052632f)
-			{
-				Dust dust;
-				// You need to set position depending on what you are doing. You may need to subtract width/2 and height/2 as well to center the spawn rectangle.
-				Vector2 position = ;
-				dust = Main.dust[Terraria.Dust.NewDust(position, 0, 0, 188, 0f, -5f, 194, new Color(255, 255, 255), 1.447368f)];
-				dust.noGravity = true;
-				dust.shader = GameShaders.Armor.GetSecondaryShader(61, Main.LocalPlayer);
-			}
 
-		}
 	}
 	internal class MagnetBlockTile : ModTile
 	{ public override void SetDefaults() { QuickBlock.QuickSet(this, 0, 191, SoundID.Tink, new Color(255, 84, 0), ItemType<Items.DecorBlockItem.MagnetBlock>(), true, false, false, ""); } }
