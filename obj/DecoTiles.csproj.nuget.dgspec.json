@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Smarcasm Lover\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj": {}
+    "C:\\Users\\cradn\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Smarcasm Lover\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj": {
+    "C:\\Users\\cradn\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Smarcasm Lover\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj",
+        "projectUniqueName": "C:\\Users\\cradn\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj",
         "projectName": "DecoTiles",
-        "projectPath": "C:\\Users\\Smarcasm Lover\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj",
-        "packagesPath": "C:\\Users\\Smarcasm Lover\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Smarcasm Lover\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\obj\\",
+        "projectPath": "C:\\Users\\cradn\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\DecoTiles.csproj",
+        "packagesPath": "C:\\Users\\cradn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cradn\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\DecoTiles\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Smarcasm Lover\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cradn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

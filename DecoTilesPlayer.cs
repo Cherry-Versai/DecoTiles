@@ -23,22 +23,6 @@ namespace DecoTiles
 	{
 		public override void PostUpdateEquips()
 		{
-			if (Main.tile[(int)(player.Center.X / 16 + 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("niceblocks").TileType("ElectricFenceTile") //This line detects when the player is in the tile directly right of the tile specified in "TIleName"
-			|| (Main.tile[(int)(player.Center.X / 16 - 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("niceblocks").TileType("ElectricFenceTile") //directly left of the tile
-			|| (Main.tile[(int)(player.Center.X / 16), ((int)(player.Center.Y / 16) + 2)].type == ModLoader.GetMod("niceblocks").TileType("ElectricFenceTile") //on top
-			|| (Main.tile[(int)(player.Center.X / 16), ((int)(player.Center.Y / 16) - 2)].type == ModLoader.GetMod("niceblocks").TileType("ElectricFenceTile"))))) //on the bottom of the tile
-		    {
-				player.Hurt(PlayerDeathReason.ByCustomReason(player.name + "custom death message here"), 25, 0); //the death message should be self explainitory. The numbers are defining the damage and the direction(dunno what this means exactly, haven't tried it), so in this example it does 25 base damage and doesn't move the player.
-				player.StickyMovement();
-			}
-		}
-		public override void ModifyScreenPosition()
-        {
-			
-        }
-
-    }
-}/*
 			if (Main.tile[(int)(player.Center.X / 16), ((int)(player.Center.Y / 16) - 7)].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile") ||
 				(Main.tile[(int)(player.Center.X / 16), ((int)(player.Center.Y / 16) - 6)].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile") ||
 				(Main.tile[(int)(player.Center.X / 16), ((int)(player.Center.Y / 16) - 5)].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile") ||
@@ -53,11 +37,11 @@ namespace DecoTiles
 			|| Main.tile[((int)(player.Center.X / 16) - 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("GravitationPotionGlassTile"))
 			{
 				player.velocity = new Vector2(-1);
-				
+
 			}
 
 			if (Main.tile[((int)(player.Center.X / 16) + 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile"))
-            {
+			{
 				player.velocity = new Vector2(-10, player.velocity.Y);
 			}
 			else if (Main.tile[((int)(player.Center.X / 16) - 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile"))
@@ -72,5 +56,11 @@ namespace DecoTiles
 			{
 				player.velocity = new Vector2(10, player.velocity.Y);
 			}
+		}
+		public override void ModifyScreenPosition()
+        {
+			
+        }
 
-*/
+    }
+}

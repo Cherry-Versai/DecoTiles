@@ -22,7 +22,6 @@ namespace DecoTiles
 {
 	public class DecoTiles : Mod
     {
-        public bool CherryDungeons = false;
 
         public static DecoTiles Instance { get; set; }
         public DecoTiles() { Instance = this; }

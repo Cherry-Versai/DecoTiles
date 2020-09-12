@@ -171,7 +171,7 @@ namespace DecoTiles.Tiles.DecorBlock.PotionBlocks
 		public override void SetDefaults()
 		{ QuickBlock.QuickSet(this, 0, 13, SoundID.Shatter, new Color(200, 246, 254), ItemType<Items.DecorBlockItem.PotionBlockItems.IronskinPotionGlass>(), true, false, false, ""); }
 		public override void FloorVisuals(Player player)
-		{ player.AddBuff(BuffID.Ironskin, 2); player.moveSpeed -= 0.3f; }
+		{ player.AddBuff(BuffID.Ironskin, 2); player.moveSpeed -= 2; }
 	}
 	internal class InvisibilityPotionGlassTile : ModTile
 	{

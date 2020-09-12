@@ -70,6 +70,8 @@ namespace DecoTiles.Tiles.DecorBlock
 	{public override void SetDefaults(){ QuickBlock.QuickSet(this, 65, 191, SoundID.Tink, new Color(40, 39, 47), ItemType<Items.DecorBlockItem.BlackBrick>(), true, false, false, ""); }}
 	internal class OfficeFloorTile : ModTile
 	{ public override void SetDefaults() { QuickBlock.QuickSet(this, 0, 191, SoundID.Tink, new Color(40, 39, 47), ItemType<Items.DecorBlockItem.OfficeFloor>(), true, false, false, ""); } }
+	internal class CosmicCystTile : ModTile
+	{ public override void SetDefaults() { QuickBlock.QuickSet(this, 0, 191, SoundID.Tink, new Color(45, 14, 82), ItemType<Items.DecorBlockItem.CosmicCyst>(), true, false, false, ""); } }
 	internal class FieryBrickTile : ModTile
 	{ public override void SetDefaults() { QuickBlock.QuickSet(this, 0, 191, SoundID.Tink, new Color(255, 84, 0), ItemType<Items.DecorBlockItem.FieryBrick>(), true, false, false, ""); } }
 	internal class FertileDirtTile : ModTile
