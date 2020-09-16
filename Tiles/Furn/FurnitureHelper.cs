@@ -152,7 +152,7 @@ namespace DecoTiles.Tiles.Furn
                 this.name = name;
             }
 
-            public override void KillMultiTile(int i, int j, int frameX, int frameY) => Item.NewItem(new Vector2(i, j) * 16, mod.ItemType(name));
+            public override void KillMultiTile(int i, int j, int frameX, int frameY) => Item.NewItem(i * 16, j* 16, 64, 32, mod.ItemType(name));
         }
 
         //Bathtub
@@ -162,14 +162,29 @@ namespace DecoTiles.Tiles.Furn
 
             public override void SetDefaults()
             {
+                QuickBlock.QuickSetFurniture(this, 4, 2, dust, SoundID.Dig, false, color);
+                TileObjectData.newTile.UsesCustomCanPlace = true;
+                TileObjectData.newTile.DrawFlipHorizontal = true;
                 TileObjectData.newTile.StyleHorizontal = true;
-                TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
+                TileObjectData.newTile = new TileObjectData(TileObjectData.Style2xX);
+                TileObjectData.newTile.CopyFrom(TileObjectData.Style4x2);
+                TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
+                TileObjectData.newTile.CoordinatePadding = 2;
+                TileObjectData.newTile.StyleMultiplier = 2;
+                TileObjectData.newTile.StyleWrapLimit = 2;
+
                 TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+                TileObjectData.newTile.Origin = new Point16(0, 0);
+                TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
+                TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
+
+                TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+                TileObjectData.newAlternate.Origin = new Point16(0, 0);
+                TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
                 TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
                 TileObjectData.addAlternate(1);
 
-                TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, 4, 0);
-                QuickBlock.QuickSetFurniture(this, 4, 2, dust, SoundID.Dig, false, color);
+                TileObjectData.addTile(Type);
             }
         }
 
@@ -180,17 +195,77 @@ namespace DecoTiles.Tiles.Furn
 
             public override void SetDefaults()
             {
+                QuickBlock.QuickSetFurniture(this, 4, 2, dust, SoundID.Dig, false, color);
+                TileObjectData.newTile.UsesCustomCanPlace = true;
+                TileObjectData.newTile.DrawFlipHorizontal = true;
                 TileObjectData.newTile.StyleHorizontal = true;
-                TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
+                TileObjectData.newTile = new TileObjectData(TileObjectData.Style2xX);
+                TileObjectData.newTile.CopyFrom(TileObjectData.Style4x2);
+                TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
+                TileObjectData.newTile.CoordinatePadding = 2;
+                TileObjectData.newTile.StyleMultiplier = 2;
+                TileObjectData.newTile.StyleWrapLimit = 2;
+
                 TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+                TileObjectData.newTile.Origin = new Point16(0, 0);
+                TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
+                TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
+
+                TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+                TileObjectData.newAlternate.Origin = new Point16(0, 0);
+                TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
                 TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
                 TileObjectData.addAlternate(1);
 
-                TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, 4, 0);
-                QuickBlock.QuickSetFurniture(this, 4, 2, dust, SoundID.Dig, false, color);
+                TileObjectData.addTile(Type);
+
+ 
+                disableSmartCursor = true;
+                adjTiles = new int[] { TileID.Beds };
+                bed = true;
+            }
+            public override bool HasSmartInteract()
+            {
+                return true;
+            }
+
+            public override void NumDust(int i, int j, bool fail, ref int num)
+            {
+                num = 1;
+            }
+
+            public override bool NewRightClick(int i, int j)
+            {
+                Player player = Main.LocalPlayer;
+                Tile tile = Main.tile[i, j];
+                int spawnX = i - tile.frameX / 18;
+                int spawnY = j + 2;
+                spawnX += tile.frameX >= 72 ? 5 : 2;
+                if (tile.frameY % 38 != 0)
+                {
+                    spawnY--;
+                }
+                player.FindSpawn();
+                if (player.SpawnX == spawnX && player.SpawnY == spawnY)
+                {
+                    player.RemoveSpawn();
+                    Main.NewText("Spawn point removed!", 255, 240, 20, false);
+                }
+                else if (Player.CheckSpawn(spawnX, spawnY))
+                {
+                    player.ChangeSpawn(spawnX, spawnY);
+                    Main.NewText("Spawn point set!", 255, 240, 20, false);
+                }
+                return true;
+            }
+            public override void MouseOver(int i, int j)
+            {
+                Player player = Main.LocalPlayer;
+                player.noThrow = 2;
+                player.showItemIcon = true;
+                player.showItemIcon2 = mod.ItemType(name);
             }
         }
-
         //bookcase
         class GenericBookcase : Furniture
         {
@@ -229,7 +304,7 @@ namespace DecoTiles.Tiles.Furn
                 for (int k = 0; k < 2; k++)
                     for (int l = 0; l < 2; ++l)
                     {
-                        Main.tile[newX + k, newY + l].frameX += (short)(tile.frameX >= 36 ? -36 : 36);
+                        Main.tile[newX + k, newY + l].frameX -= (short)(tile.frameX >= 36 ? -36 : 36);
                         Wiring.SkipWire(newX + k, newY + l);
                     }
             }
@@ -237,7 +312,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 36) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
+                if (tile.frameX == 0 && tile.frameY == 0) { (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f); };
             }
         }
 
@@ -249,9 +324,12 @@ namespace DecoTiles.Tiles.Furn
             public override void SetDefaults()
             {
                 Main.tileLighted[Type] = true;
+                TileObjectData.newTile = new TileObjectData(TileObjectData.Style2xX);
+                TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
                 TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, 1, 0);
                 QuickBlock.QuickSetFurniture(this, 1, 1, dust, SoundID.Dig, false, color);
                 AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+                
             }
 
             public override void HitWire(int i, int j)
@@ -263,7 +341,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 18) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
+                if (tile.frameX == 0 && tile.frameY == 0) { (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f); };
             }
         }
 
@@ -318,7 +396,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 54) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
+                if (tile.frameX == 0 && tile.frameY == 0) { (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f); };
             }
         }
 
@@ -342,6 +420,11 @@ namespace DecoTiles.Tiles.Furn
 
             public override void SetDefaults()
             {
+                Main.tileFrameImportant[Type] = true;
+                Main.tileBlockLight[Type] = true;
+                Main.tileSolid[Type] = true;
+                Main.tileNoAttach[Type] = true;
+
                 TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
                 TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
                 TileObjectData.newTile.UsesCustomCanPlace = true;
@@ -360,9 +443,11 @@ namespace DecoTiles.Tiles.Furn
                 Main.tileSolid[Type] = true;
                 Main.tileNoAttach[Type] = true;
                 Main.tileLavaDeath[Type] = true;
+
                 TileID.Sets.NotReallySolid[Type] = true;
                 TileID.Sets.DrawsWalls[Type] = true;
                 TileID.Sets.HasOutlines[Type] = true;
+
 
                 AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 
@@ -491,7 +576,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 18 && tile.frameY == 0) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
+                if (tile.frameX == 0 && tile.frameY == 0) { (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f); };
             }
         }
 
@@ -524,7 +609,7 @@ namespace DecoTiles.Tiles.Furn
             public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
             {
                 Tile tile = Framing.GetTileSafely(i, j);
-                if (tile.frameX >= 18 && tile.frameY == 18) (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f);
+                if (tile.frameX == 0 && tile.frameY == 0) { (r, g, b) = (color.R / 255f, color.G / 255f, color.B / 255f); };
             }
         }
 
