@@ -76,10 +76,10 @@ namespace DecoTiles.Items.DecorBlockItem
 	public class PlasticGrass : QuickTileItem { public PlasticGrass() : base("Plastic Grass", "", TileType<Tiles.DecorBlock.PlasticGrassTile>(), 0) { } }
 	public class RedLegoBrick : QuickTileItem { public RedLegoBrick() : base("Red Lego Brick", "", TileType<Tiles.DecorBlock.RedLegoBrickTile>(), 0) { } }
 	public class BlackLegoBrick : QuickTileItem { public BlackLegoBrick() : base("Black Lego Brick", "", TileType<Tiles.DecorBlock.BlackLegoBrickTile>(), 0) { } }
-	public class YellowLegoBrick : QuickTileItem { public YellowLegoBrick() : base("Yellow Lego Brick", "", TileType<Tiles.DecorBlock.BlackLegoBrickTile>(), 0) { } }
-	public class GreenLegoBrick : QuickTileItem { public GreenLegoBrick() : base("Green Lego Brick", "", TileType<Tiles.DecorBlock.BlackLegoBrickTile>(), 0) { } }
-	public class BlueLegoBrick : QuickTileItem { public BlueLegoBrick() : base("Blue Lego Brick", "", TileType<Tiles.DecorBlock.BlackLegoBrickTile>(), 0) { } }
-	public class WhiteLegoBrick : QuickTileItem { public WhiteLegoBrick() : base("White Lego Brick", "", TileType<Tiles.DecorBlock.BlackLegoBrickTile>(), 0) { } }
+	public class YellowLegoBrick : QuickTileItem { public YellowLegoBrick() : base("Yellow Lego Brick", "", TileType<Tiles.DecorBlock.YellowLegoBrickTile>(), 0) { } }
+	public class GreenLegoBrick : QuickTileItem { public GreenLegoBrick() : base("Green Lego Brick", "", TileType<Tiles.DecorBlock.GreenLegoBrickTile>(), 0) { } }
+	public class BlueLegoBrick : QuickTileItem { public BlueLegoBrick() : base("Blue Lego Brick", "", TileType<Tiles.DecorBlock.BlueLegoBrickTile>(), 0) { } }
+	public class WhiteLegoBrick : QuickTileItem { public WhiteLegoBrick() : base("White Lego Brick", "", TileType<Tiles.DecorBlock.WhiteLegoBrickTile>(), 0) { } }
 	//Plastic Tiles ^	
 
 

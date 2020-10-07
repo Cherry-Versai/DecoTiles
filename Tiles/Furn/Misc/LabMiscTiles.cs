@@ -174,7 +174,10 @@ namespace DecoTiles.Tiles.Furn.Misc
             Main.tileLavaDeath[Type] = false;
             Main.tileFrameImportant[Type] = true;
             drop = mod.ItemType("OfficeMug");
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
+            Main.tileLighted[Type] = true;
+            TileObjectData.newTile = new TileObjectData(TileObjectData.Style2xX);
+            TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.Table, 1, 0);
             TileObjectData.newTile.Origin = new Point16(0, 0);
             TileObjectData.addTile(Type);
             TileObjectData.newTile.CoordinatePadding = 2;

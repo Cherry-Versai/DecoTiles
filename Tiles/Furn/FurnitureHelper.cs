@@ -125,7 +125,7 @@ namespace DecoTiles.Tiles.Furn
                         recipe.AddIngredient(ItemID.Book);
                     }
 
-                    if (name.Contains("Sink"))
+                    if (name.Contains("Sink") || name.Contains("Bath"))
                         recipe.AddIngredient(ItemID.WaterBucket);
 
                     if (name.Contains("Sofa"))
@@ -325,8 +325,8 @@ namespace DecoTiles.Tiles.Furn
             {
                 Main.tileLighted[Type] = true;
                 TileObjectData.newTile = new TileObjectData(TileObjectData.Style2xX);
-                TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
-                TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, 1, 0);
+                TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
+                TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.Table, 1, 0);
                 QuickBlock.QuickSetFurniture(this, 1, 1, dust, SoundID.Dig, false, color);
                 AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
                 

@@ -40,21 +40,25 @@ namespace DecoTiles
 
 			}
 
-			if (Main.tile[((int)(player.Center.X / 16) + 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile"))
+			if (Main.tile[((int)(player.Center.X / 16) - 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile"))  //right
 			{
-				player.velocity = new Vector2(-10, player.velocity.Y);
+				player.velocity = new Vector2(-1,0);
+				player.gravity = 0;
 			}
-			else if (Main.tile[((int)(player.Center.X / 16) - 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile"))
+			else if (Main.tile[((int)(player.Center.X / 16) + 1), ((int)(player.Center.Y / 16))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile")) //left
 			{
-				player.velocity = new Vector2(10, player.velocity.Y);
+				player.velocity = new Vector2(1,0);
+				player.gravity = 0;
 			}
-			else if (Main.tile[((int)(player.Center.X / 16)), ((int)(player.Center.Y / 16 + 2))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile"))
+			else if (Main.tile[((int)(player.Center.X / 16)), ((int)(player.Center.Y / 16 + 1.5f))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile")) //top
 			{
-				player.velocity = new Vector2(10, player.velocity.Y);
+				player.velocity = new Vector2(0,1);
+				player.gravity = 0;
 			}
-			else if (Main.tile[((int)(player.Center.X / 16)), ((int)(player.Center.Y / 16 + 2))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile"))
+			else if (Main.tile[((int)(player.Center.X / 16)), ((int)(player.Center.Y / 16 - 1.5f))].type == ModLoader.GetMod("DecoTiles").TileType("MagnetBlockTile")) //bottom
 			{
-				player.velocity = new Vector2(10, player.velocity.Y);
+				player.velocity = new Vector2(0,-1);
+				player.gravity = 0;
 			}
 		}
 		public override void ModifyScreenPosition()
