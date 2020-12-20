@@ -284,6 +284,11 @@
             Some CLRs will load all required assemblies when the class is entered, not necessarily just the method, so you've got to watch out
             </summary>
         </member>
+        <member name="M:Terraria.ModLoader.Core.LogArchiver.ArchiveLogs">
+            <summary>
+            Attempt archiving logs.
+            </summary>
+        </member>
         <member name="M:Terraria.ModLoader.Core.LoggingHooks.HookWebRequests">
             <summary>
             Attempt to hook the .NET internal methods to log when requests are sent to web addresses.
@@ -1684,7 +1689,7 @@
             </summary>
             <param name="item">The item being used</param>
             <param name="player">The player using the item</param>
-            <param name="add">Used for additively stacking buffs (most common). Only ever use += on this field. Things with effects like "5% increased MyDamageClass damage" would use this: `add += 0.05`</param>
+            <param name="add">Used for additively stacking buffs (most common). Only ever use += on this field. Things with effects like "5% increased MyDamageClass damage" would use this: `add += 0.05f`</param>
             <param name="mult">Use to directly multiply the player's effective damage. Good for debuffs, or things which should stack separately (eg ammo type buffs)</param>
             <param name="flat">This is a flat damage bonus that will be added after add and mult are applied. It facilitates effects like "4 more damage from weapons"</param>
         </member>
@@ -5852,7 +5857,7 @@
             Allows you to temporarily modify this weapon's damage based on player buffs, etc. This is useful for creating new classes of damage, or for making subclasses of damage (for example, Shroomite armor set boosts).
             </summary>
             <param name="player">The player using the item</param>
-            <param name="add">Used for additively stacking buffs (most common). Only ever use += on this field. Things with effects like "5% increased MyDamageClass damage" would use this: `add += 0.05`</param>
+            <param name="add">Used for additively stacking buffs (most common). Only ever use += on this field. Things with effects like "5% increased MyDamageClass damage" would use this: `add += 0.05f`</param>
             <param name="mult">Use to directly multiply the player's effective damage. Good for debuffs, or things which should stack separately (eg ammo type buffs)</param>
             <param name="flat">This is a flat damage bonus that will be added after add and mult are applied. It facilitates effects like "4 more damage from weapons"</param>
         </member>
@@ -7577,7 +7582,7 @@
             Allows you to temporarily modify this weapon's damage based on player buffs, etc. This is useful for creating new classes of damage, or for making subclasses of damage (for example, Shroomite armor set boosts).
             </summary>
             <param name="item">The item being used</param>
-            <param name="add">Used for additively stacking buffs (most common). Only ever use += on this field. Things with effects like "5% increased MyDamageClass damage" would use this: `add += 0.05`</param>
+            <param name="add">Used for additively stacking buffs (most common). Only ever use += on this field. Things with effects like "5% increased MyDamageClass damage" would use this: `add += 0.05f`</param>
             <param name="mult">Use to directly multiply the player's effective damage. Good for debuffs, or things which should stack separately (eg ammo type buffs)</param>
             <param name="flat">This is a flat damage bonus that will be added after add and mult are applied. It facilitates effects like "4 more damage from weapons"</param>
         </member>

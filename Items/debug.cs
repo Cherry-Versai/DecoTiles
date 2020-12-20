@@ -27,7 +27,7 @@ namespace DecoTiles.Items
             item.useTime = 10;
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.consumable = true;
-            item.createTile = mod.TileType("BlueSign");
+            item.createTile = mod.TileType("SpaceFountainTile");
             item.rare = 13;
         }
     }

@@ -1,0 +1,13 @@
+Cherry's Various Tiles is a pretty cool mod, it adds lots of new tiles into your game! From many many various new decoration tiles to some quality of life things, this mod is a content mod consisting of entirely new tiles as the focus. While there is a vast selection of interesting new decoration, the functional tiles are sure to make gameplay more interesting even for those who are more on the box-house side of building. New pylons are planned as well, so keep an eye out for those!
+
+One mod is fun and all, but theses are some reccomendations to elevate the experience while playing this mod!
+-The Spirit Mod, a big content mod that also adds new cool decoration.
+-Chad's Furniture, a mod similiar to this but with the focus of only new decoration.
+
+
+Special thanks to these people for making this possible!
+
+GabeHasWon, for being a great helper in showing how to do things and providing code for some things
+Scalie, for providing some code to make tile creation faster!
+Beta testers, for helping me find bugs.
+Starlight River, for inspiring the creation of the mod.
