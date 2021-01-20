@@ -103,15 +103,15 @@ namespace DecoTiles.Tiles.DecorBlock
 			QuickBlock.QuickSet(this, 0, 54, SoundID.Tink, new Color(37, 32, 41), ItemType<Items.DecorBlockItem.Coalstone>(), true, false, false, "");
 		}
 		
-		public void NearbyEffects(int i, float j, Player player, NPC npc)
+		public void NearbyEffects(int i, int j, Player player, NPC npc)
         {
-			if (Vector2.Distance(player.position, Main.npc[i].position) > 200)
+			if (Vector2.Distance(new Vector2(i, j), Main.npc[i].position) < 2000)
             {
-				npc.AddBuff(BuffID.OnFire,60*9867);
-			}
-			
+               npc.AddBuff(BuffID.OnFire, 60 * 9867);
+            }
+
         }
-			
+
 	}
 	public class InfinityBlockTile : ModTile
 	{

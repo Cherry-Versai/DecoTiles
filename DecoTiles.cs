@@ -17,12 +17,13 @@ using DecoTiles.Tiles.Furn;
 using static DecoTiles.Tiles.Furn.FurnitureHelper;
 using Terraria.Localization;
 using Terraria.ID;
+using DecoTiles.UI;
 
 namespace DecoTiles
 {
 	public class DecoTiles : Mod
     {
-
+        internal BiomeMenuUI BiomeMenuUI;
         public static DecoTiles Instance { get; set; }
         public DecoTiles() { Instance = this; }
         public static void AutoloadFurniture()
@@ -35,11 +36,32 @@ namespace DecoTiles
                 }
             }
         }
+        internal BiomeMenu BiomeMenu;
+        private UserInterface _BiomeMenu;
         public override void Load()
         {
             AutoloadFurniture();
+            BiomeMenuUI = new BiomeMenuUI();
+            BiomeMenuUI.Activate();
+            _BiomeMenu = new UserInterface();
+            _BiomeMenu.SetState(BiomeMenu);
         }
-
+        public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+        {
+            int mouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+            if (mouseTextIndex != -1)
+            {
+                layers.Insert(mouseTextIndex, new LegacyGameInterfaceLayer(
+                    "DecoTiles: Biome Select Menu",
+                    delegate
+                    {
+                        _BiomeMenu.Draw(Main.spriteBatch, new GameTime());
+                        return true;
+                    },
+                    InterfaceScaleType.UI)
+                );
+            }
+        }
         public override void AddRecipeGroups()
         {           
             RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Celestial Pickaxe", new int[]
@@ -52,5 +74,8 @@ namespace DecoTiles
             }); ; ; ;
             RecipeGroup.RegisterGroup("DecoTiles:CelestialPicks", group);
         }
+
+
+
     }
 }
