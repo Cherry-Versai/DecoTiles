@@ -242,6 +242,7 @@ namespace DecoTiles.Tiles.DecorBlock.PotionBlocks
 		{ QuickBlock.QuickSet(this, 0, 13, SoundID.Shatter, new Color(200, 246, 254), ItemType<Items.DecorBlockItem.PotionBlockItems.RecallPotionGlass>(), true, false, false, ""); }
 		public override void FloorVisuals(Player player)
 		{
+			player.FindSpawn();
 			if (player.SpawnX == -1 && player.SpawnY == -1)
 			{ player.Teleport(new Vector2(Main.spawnTileX, Main.spawnTileY - 2) * 16); }
 			else
