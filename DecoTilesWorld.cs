@@ -11,7 +11,14 @@ namespace DecoTiles
 {
     public class DecoTilesWorld : ModWorld
     {
-
+        public override void Initialize()
+        {
+            Mod spiritMod = ModLoader.GetMod("SpiritMod");
+            if (spiritMod != null)
+            {
+                bool SpiritMod = true; 
+            }
+        }
         int[] DungeonBricks = { TileID.BlueDungeonBrick, TileID.PinkDungeonBrick, TileID.GreenDungeonBrick};
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
         {
@@ -29,6 +36,10 @@ namespace DecoTiles
                         }
 
                 }));
+            }
+            if (GetInstance<Config>().MiniStructures)
+            {
+
             }
 
         }

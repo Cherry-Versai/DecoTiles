@@ -68,7 +68,7 @@ namespace DecoTiles.Tiles
             tile.soundType = soundType;
             tile.disableSmartCursor = true;
         }
-        //Cherry Code ------------------
+        //Cherry (Adapted) Code ------------------
 
         public static void QuickSetPlatform(this ModTile tile, int minPick, int dustType, int soundType, bool LavaDeath, int drop, string mapName = "")
         {

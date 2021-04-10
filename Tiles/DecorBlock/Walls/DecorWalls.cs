@@ -21,6 +21,8 @@ namespace DecoTiles.Tiles.DecorBlock.Walls
 	{ public override void SetDefaults() { QuickBlock.QuickSetWall(this, 191, SoundID.Dig, mod.ItemType("BlackSlabWall"), true, new Color(93, 96, 107)); } }
 	public class BlackTiledWallTile : ModWall
 	{ public override void SetDefaults() { QuickBlock.QuickSetWall(this, 191, SoundID.Dig, mod.ItemType("BlackTiledWall"), true, new Color(93, 96, 107)); } }
+	public class HardSandstoneBrickWallTile : ModWall
+	{ public override void SetDefaults() { QuickBlock.QuickSetWall(this, 191, SoundID.Dig, mod.ItemType("HardSandstoneBrickWall"), true, new Color(93, 96, 107)); } }
 	public class VoidCrystalBlueWallTile : ModWall
 	{ public override void SetDefaults() { QuickBlock.QuickSetWall(this, 156, SoundID.Dig, mod.ItemType("VoidCrystalBlueWall"), true, new Color(255, 255, 255)); }
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

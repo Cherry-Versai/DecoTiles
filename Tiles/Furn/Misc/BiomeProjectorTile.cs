@@ -11,14 +11,13 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Microsoft.Xna.Framework.Graphics;
-using DecoTiles.UI;
 
 
 namespace DecoTiles.Tiles.Furn.Misc
 {
 
     public class BiomeProjectorTile : ModTile
-    {
+    { /*
         public override void SetDefaults()
         {
             Main.tileLavaDeath[Type] = false;
@@ -35,7 +34,7 @@ namespace DecoTiles.Tiles.Furn.Misc
             TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newTile.Origin = new Point16(1, 3);
+            TileObjectData.newTile.Origin = new Point16(0, 3);
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
 
             TileObjectData.addTile(Type);
@@ -58,6 +57,6 @@ namespace DecoTiles.Tiles.Furn.Misc
         public override bool HasSmartInteract()
         {
             return true;
-        }
+        }*/
     }
 }

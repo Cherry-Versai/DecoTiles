@@ -99,7 +99,8 @@ namespace DecoTiles.Items.DecorBlockItem
 	public class FertileDirt : QuickTileItem { public FertileDirt() : base("Fertile Dirt", "wet", TileType<Tiles.DecorBlock.FertileDirtTile>(), 0) { } public override void AddRecipes() { ModRecipe recipe = new ModRecipe(mod); recipe.AddIngredient(ItemID.MudBlock, 1); recipe.AddIngredient(ItemID.DirtBlock, 1); recipe.SetResult(this, 2); recipe.AddRecipe(); } }
 	public class AuroraBrick : QuickTileItem { public AuroraBrick() : base("Aurora Brick", "", TileType<Tiles.DecorBlock.AuroraBrickTile>(), 0) { } }
 	public class CosmicCyst : QuickTileItem { public CosmicCyst() : base("Cosmic Cyst", "", TileType<Tiles.DecorBlock.CosmicCystTile>(), 0) { } }
-	public class PenumbraPlate : QuickTileItem { public PenumbraPlate() : base("Penumbra Plating", "", TileType<Tiles.DecorBlock.PenumbraPlateTile>(), 0){ } }
+	public class PenumbraPlate : QuickTileItem { public PenumbraPlate() : base("Penumbra Plating", "", TileType<Tiles.DecorBlock.PenumbraPlateTile>(), 0) { } }
+	public class HardSandstoneBrick : QuickTileItem { public HardSandstoneBrick() : base("Hardened Sandstone Brick", "", TileType<Tiles.DecorBlock.HardSandstoneBrickTile>(), 0) { } }
 	public class LivingBlood : QuickTileItem { public LivingBlood() : base("Living Blood", "", TileType<Tiles.DecorBlock.LivingBloodTile>(), 0) { } }
 	public class MagnetBlock : QuickTileItem { public MagnetBlock() : base("Magnet Block", "", TileType<Tiles.DecorBlock.MagnetBlockTile>(), 0) { } }
 	public class EldritchGrass : QuickTileItem { public EldritchGrass() : base("Eldritch Grass Block", "", TileType<Tiles.DecorBlock.EldritchGrassTile>(), 0) { } }
@@ -136,6 +137,10 @@ namespace DecoTiles.Items.DecorBlockItem
 			}
 		}
 	}
+	public class HardenedAsh : QuickTileItem { public HardenedAsh() : base("Hardened Ash", "", TileType<Tiles.DecorBlock.HardenedAshTile>(), 0) { } }
+	public class Ashbrick : QuickTileItem { public Ashbrick() : base("Ash Brick", "", TileType<Tiles.DecorBlock.AshbrickTile>(), 0) { } }
+	public class Basalt : QuickTileItem { public Basalt() : base("Basalt", "", TileType<Tiles.DecorBlock.BasaltTile>(), 0) { } }
+	public class TopazBrick : QuickTileItem { public TopazBrick() : base("Topaz Brick", "", TileType<Tiles.DecorBlock.TopazBrickTile>(), 0) { } }
 	public class CardboardBox : QuickTileItem { public CardboardBox() : base("Cardboard Box", "", TileType<Tiles.DecorBlock.LivingBloodTile>(), 0) { } }
 	public class ChessboardBlock : QuickTileItem
 	{

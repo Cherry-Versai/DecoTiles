@@ -94,6 +94,31 @@ namespace DecoTiles.Tiles.DecorBlock
 		public override void SetDefaults()
 		{ QuickBlock.QuickSet(this, 0, 261, SoundID.Dig, new Color(47, 40, 63), ItemType<Items.DecorBlockItem.EldritchGrass>(), false, false, true, ""); }
 	}
+	internal class HardenedAshTile : ModTile
+	{
+		public override void SetDefaults()
+		{ QuickBlock.QuickSet(this, 0, 261, SoundID.Tink, new Color(47, 40, 63), ItemType<Items.DecorBlockItem.HardenedAsh>(), false, false, false, ""); }
+	}
+	internal class AshbrickTile : ModTile
+	{
+		public override void SetDefaults()
+		{ QuickBlock.QuickSet(this, 0, 261, SoundID.Tink, new Color(47, 40, 63), ItemType<Items.DecorBlockItem.Ashbrick>(), false, false, false, ""); }
+	}
+	internal class HardSandstoneBrickTile : ModTile
+	{
+		public override void SetDefaults()
+		{ QuickBlock.QuickSet(this, 0, 261, SoundID.Tink, new Color(47, 40, 63), ItemType<Items.DecorBlockItem.HardSandstoneBrick>(), false, false, false, ""); }
+	}
+	internal class TopazBrickTile : ModTile
+	{
+		public override void SetDefaults()
+		{ QuickBlock.QuickSet(this, 0, 261, SoundID.Tink, new Color(47, 40, 63), ItemType<Items.DecorBlockItem.TopazBrick>(), false, false, false, ""); }
+	}
+	internal class BasaltTile : ModTile
+	{
+		public override void SetDefaults()
+		{ QuickBlock.QuickSet(this, 0, 261, SoundID.Tink, new Color(47, 40, 63), ItemType<Items.DecorBlockItem.Basalt>(), false, false, false, ""); }
+	}
 	internal class PlasticGrassTile : ModTile
 	{public override void SetDefaults() { QuickBlock.QuickSet(this, 0, 13, SoundID.Tink, new Color(141, 89, 39), ItemType<Items.DecorBlockItem.PlasticGrass>(), true, false, false, ""); } }
 	internal class CoalstoneTile : ModTile
