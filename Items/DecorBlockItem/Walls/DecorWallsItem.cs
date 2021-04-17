@@ -43,9 +43,18 @@ namespace DecoTiles.Items.DecorBlockItem.Walls
 			recipe = new ModRecipe(mod); recipe.AddIngredient(mod, "BlackSlabWall", 4); recipe.SetResult(mod, "BlackBrick", 1); recipe.AddRecipe();
 		}
 	}
+	public class HardSandstoneBrickWall : QuickWallItem
+	{
+		public HardSandstoneBrickWall() : base("Hardened Sandstone Brick Wall", "", WallType<HardSandstoneBrickWallTile>()) { }
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod); recipe.AddIngredient(mod, "HardSandstoneBrick", 1); recipe.AddTile(TileID.WorkBenches); recipe.SetResult(this, 4); recipe.AddRecipe();
+			recipe = new ModRecipe(mod); recipe.AddIngredient(mod, "HardSandstoneBrickWall", 4); recipe.SetResult(mod, "HardSandstoneBrick", 1); recipe.AddRecipe();
+		}
+	}
 	public class AlysianPlatingWall : QuickWallItem
 	{
-		public AlysianPlatingWall() : base("Alysian Goddess Plating Wall", "", WallType<BlackTiledWallTile>()) { }
+		public AlysianPlatingWall() : base("Alysian Goddess Plating Wall", "", WallType<AlysianPlatingWallTile>()) { }
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod); recipe.AddIngredient(mod, "AlysianPlating", 1); recipe.AddTile(TileID.WorkBenches); recipe.SetResult(this, 4); recipe.AddRecipe();

@@ -9,15 +9,23 @@ namespace DecoTiles.Tiles.Trees
 		private Mod mod => ModLoader.GetMod("DecoTiles");
 
 		public override int DropWood()
-		{ return ItemType<Items.DecorBlockItem.OfficeFloor>(); }
+		{
+            return ItemType<Items.DecorBlockItem.OfficeFloor>();
+        }
 
 		public override Texture2D GetTexture()
-		{ return mod.GetTexture("Tiles/Trees/EldritchTree"); }
+		{
+            return mod.GetTexture("Tiles/Trees/EldritchTree");
+        }
 
 		public override Texture2D GetTopTextures(int i, int j, ref int frame, ref int frameWidth, ref int frameHeight, ref int xOffsetLeft, ref int yOffset)
-		{ return mod.GetTexture("Tiles/Trees/EldritchTree_Tops"); }
+		{
+            return mod.GetTexture("Tiles/Trees/EldritchTree_Tops");
+        }
 
 		public override Texture2D GetBranchTextures(int i, int j, int trunkOffset, ref int frame)
-		{ return mod.GetTexture("Tiles/Trees/EldritchTree_Branches"); }
+		{
+            return mod.GetTexture("Tiles/Trees/EldritchTree_Branches");
+        }
 	}
 }

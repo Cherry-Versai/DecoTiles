@@ -45,6 +45,16 @@ namespace DecoTiles.Items  //Huge thanks to Scalie for letting me use this (Slig
             item.value = Value;
             item.rare = Rare;
         }
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            foreach (TooltipLine line2 in tooltips)
+            {
+                if (line2.mod == "Terraria" && line2.Name == "ItemName")
+                {
+                    line2.overrideColor = new Color(134, 182, 189);
+                }
+            }
+        }
     }
 
     public abstract class QuickTileItem : ModItem
@@ -83,8 +93,18 @@ namespace DecoTiles.Items  //Huge thanks to Scalie for letting me use this (Slig
             item.consumable = true;
             item.createTile = Tiletype;
             item.rare = Rare;
-
+            
             SafeSetDefaults();
+        }
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            foreach (TooltipLine line2 in tooltips)
+            {
+                if (line2.mod == "Terraria" && line2.Name == "ItemName")
+                {
+                    line2.overrideColor = new Color(134, 182, 189);
+                }
+            }
         }
 
     }

@@ -8,8 +8,12 @@ namespace DecoTiles.Configs
         public override ConfigScope Mode => ConfigScope.ClientSide;
 
         [Label("New dungeons")]
-        [Tooltip("Enables new colours for the dungeon. \nNOTE: This may mess with some mods dungeon generation but it should be fine.")]
+        [Tooltip("Enables new colours for the dungeon. \nNOTE: This may mess with some mods dungeon generation and any additions.")]
         public bool CherryDungeons = true;
+
+        [Label("Microstructures")]
+        [Tooltip("Enables the generation of a select few microstructures across the world.")]
+        public bool MiniStructures = true;
 
     }
 }
